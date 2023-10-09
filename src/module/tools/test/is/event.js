@@ -1,0 +1,1 @@
+export default (a) => events.eventNames().includes(a)

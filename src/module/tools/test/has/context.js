@@ -1,0 +1,1 @@
+export default (a) => data.context.c.hasOwnProperty(a)

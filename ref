@@ -1,0 +1,107 @@
+tutorial
+
+https://www.twilio.com/pt-br/blog/como-criar-uma-cli-com-node-js
+https://blog.logrocket.com/creating-custom-repl-node-js/
+
+---
+
+help
+
+documentation nodejs vm
+
+https://nodejs.org/api/vm.html
+
+---
+
+lib
+
+menu
+
+https://www.npmjs.com/package/cli-menu
+
+transpiladores
+
+https://swc.rs
+https://babeljs.io
+https://github.com/alangpierce/sucrase#sucrase/
+
+eval
+
+https://www.npmjs.com/package/3xpr?activeTab=readme
+https://www.npmjs.com/package/scoped-eval?activeTab=readme
+
+executar js isolado
+
+https://www.npmjs.com/package/c8?activeTab=readme
+https://www.npmjs.com/package/v8-sandbox?activeTab=readme
+https://www.npmjs.com/package/vm2-process?activeTab=readme
+
+framework para criar repl
+
+https://www.npmjs.com/package/cliffy?activeTab=readme
+https://www.npmjs.com/package/vorpal?activeTab=readme
+
+receber argumentos
+
+https://www.npmjs.com/package/prompt-sync?activeTab=readme
+
+converter string para script
+
+https://www.npmjs.com/package/metavm?activeTab=readme
+
+kit de ferramentas para cli
+
+https://www.npmjs.com/package/terminal-kit?activeTab=readme
+
+selecao de resposta
+
+https://www.npmjs.com/package/prompts?activeTab=readme
+https://www.npmjs.com/package/enquirer?activeTab=readme
+https://www.npmjs.com/package/inquirer?activeTab=readme
+
+colorir cli
+
+https://www.npmjs.com/package/chalk?activeTab=readme
+https://www.npmjs.com/package/kleur?activeTab=readme
+
+incone de carregar
+
+https://www.npmjs.com/package/ora?activeTab=readme
+
+analisar argumentos
+
+https://www.npmjs.com/package/yargs?activeTab=readme
+https://www.npmjs.com/package/commander?activeTab=readme
+https://www.npmjs.com/package/arg?activeTab=readme
+https://www.npmjs.com/package/meow?activeTab=readme
+
+react para cli
+
+https://www.npmjs.com/package/ink?activeTab=readme
+
+executar uma lista de tarefas
+
+https://www.npmjs.com/package/listr?activeTab=readme
+
+temux com node
+
+https://www.npmjs.com/package/stmux?activeTab=readme
+
+estilo de caixa para cli
+
+https://www.npmjs.com/package/boxen?activeTab=readme
+
+---
+
+stackoverflow
+
+https://stackoverflow.com/questions/75424069/custom-node-repl-with-typescript-and-ts-node
+https://stackoverflow.com/questions/43627622/what-is-the-global-object-in-nodejs
+
+---
+
+ver depois
+
+https://metarhia.com
+https://github.com/metarhia/impress
+https://nodejs.org/en/docs/guides/abi-stability
