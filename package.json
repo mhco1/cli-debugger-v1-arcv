@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "bin": {
-    "debugger-tool": "bin/rsjs"
+    "debugger-tool": "./bin/rsjs.js"
   },
   "imports": {
     "#src/*.js": "./src/*.js"

@@ -8,10 +8,10 @@ export default (script = '') => {
 
     let res;
     const name = d.now;
-    const c = d.c[name];
+    const g = d.c[name].global;
 
     try {
-        res = vm.runInContext(script, c);
+        res = vm.runInContext(script, g);
     } catch (err) {
         return [true, err.message]
     }

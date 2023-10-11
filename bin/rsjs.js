@@ -1,12 +1,15 @@
 #!/usr/bin/env node
 
+import Path from 'path'
 import meow from 'meow';
 import fs from 'fs-extra';
-import cli from '../src/cli.js';
-// import cli from '../src/teste_cli.js';
+
+globalThis.root = '/mnt/home/x/pastas/projects/projects/aplications/node/cli-debugger';
+
+const cli = (await import(Path.resolve(root, 'src/cli.js'))).default
 
 const arg = meow(
-    fs.readFileSync('src/help.txt', { encoding: 'utf-8' }),
+    fs.readFileSync(Path.resolve(root, 'src/help.txt'), { encoding: 'utf-8' }),
     {
         importMeta: import.meta,
         flags: {
@@ -18,4 +21,4 @@ const arg = meow(
     }
 );
 
-cli(arg);
+cli(arg, root);

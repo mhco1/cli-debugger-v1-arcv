@@ -3,7 +3,7 @@ import EventEmitter from "events";
 // import * as Events from './modules/events/index.js';
 // import { modules } from '#src/import.js';
 
-const test = () => term('test ok\n')
+const test = () => term('test ok\n');
 
 globalThis.copyGlobal = Object.assign({}, globalThis);
 globalThis.module = (await import('#src/import.js')).default
@@ -14,7 +14,7 @@ globalThis.term = Terminal.terminal;
 term.clear();
 
 term.on('key', (name, matches, data) => {
-    if (name == 'CTRL_C') process.exit();
+    if (name == 'CTRL_C') events.emit('e_end');
     if (name == 'CTRL_T') debugger;
 })
 
@@ -75,5 +75,7 @@ export default async (arg) => {
     // });
     // Menu.start();
     // term(events.eventNames().join('\n'),'\n')
+    module.context.new('context');
+    module.context.select('context');
     events.emit('e_start');
 }

@@ -1,14 +1,15 @@
 import Path from 'path';
 
 const imp = async (o, p, n) => {
-    o[n.replaceAll(/\/|\-|\.|\\/g, '_')] = (await import(Path.resolve(root, p, `${n}.js`))).default;
+    o[n.replaceAll(/\/|\-|\.|\\/g, '_')] = (await import(Path.resolve(root, 'src/module', p, `${n}.js`))).default;
 };
-const root = './src/module';
+
 const module = {};
 
 module.events = {};
 await imp(module.events, 'events', 'menu');
 await imp(module.events, 'events', 'start');
+await imp(module.events, 'events', 'end');
 await imp(module.events, 'events', 'repl/create');
 await imp(module.events, 'events', 'repl/delete');
 await imp(module.events, 'events', 'repl/edit');
