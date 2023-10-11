@@ -43,4 +43,11 @@ await imp(module.context, 'context', 'select');
 await imp(module.context, 'context', 'show');
 // await imp(module.context, 'context', 'start');
 
+module.command = {};
+await imp(module.command, 'command', 'clear')
+await imp(module.command, 'command', 'context')
+await imp(module.command, 'command', 'exit')
+await imp(module.command, 'command', 'help')
+// await imp(module.command, 'command', 'webpack')
+
 export default module
