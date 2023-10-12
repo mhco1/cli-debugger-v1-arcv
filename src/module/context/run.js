@@ -13,7 +13,7 @@ export default (script = '') => {
     try {
         res = vm.runInContext(script, g);
     } catch (err) {
-        return [true, err.message]
+        return [true, `${err.name}: ${err.message}`]
     }
     return [false, res]
 }

@@ -19,9 +19,16 @@ export default [e_name, async () => {
     if (res[0] == '.' && res.slice(1) in cmd) return cmd[res.slice(1)][0]();
 
     const [err, msg] = mc.run(res);
-    term(inspect(msg, {
-        colors: true,
-        showProxy: true,
-    }), '\n');
+
+    if (err) {
+        term(msg);
+    } else {
+        term(inspect(msg, {
+            colors: true,
+            showProxy: true,
+        }));
+    }
+
+    term('\n')
     events.emit('e_repl_run');
 }]
