@@ -4,7 +4,7 @@ import Path from 'path'
 import meow from 'meow';
 import fs from 'fs-extra';
 
-globalThis.root = '/mnt/home/x/pastas/projects/projects/aplications/node/cli-debugger';
+globalThis.root = '/mnt/home/x/Desktop/cli-debugger';
 
 const cli = (await import(Path.resolve(root, 'src/cli.js'))).default
 

@@ -18,7 +18,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "~":"./src/*",
     "arg": "^5.0.2",
     "asciify": "^1.3.5",
     "enquirer": "^2.4.1",
