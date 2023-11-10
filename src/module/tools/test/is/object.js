@@ -1,1 +1,0 @@
-export default (a) => typeof a === 'object' && !Array.isArray(a)

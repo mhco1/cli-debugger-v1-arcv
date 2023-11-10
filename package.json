@@ -3,7 +3,6 @@
   "description": "Ferramenta cli para debugger com node",
   "version": "1.0.0",
   "main": "index.js",
-  "type": "module",
   "bin": {
     "debugger-tool": "./bin/rsjs.js"
   },
