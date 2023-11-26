@@ -1,2 +1,0 @@
-este é um help
-    -help --h ajuda

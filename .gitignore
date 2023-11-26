@@ -1,3 +1,9 @@
+# note
+*.note.*
+
+# test
+*.test.*
+
 # Logs
 logs
 *.log
