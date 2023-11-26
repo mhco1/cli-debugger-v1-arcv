@@ -1,15 +1,12 @@
 export default {
     has: {
-        context: (a) => data.context.c.hasOwnProperty(a),
+        context: (v) => datas.context.c.hasOwnProperty(v),
     },
 
     is: {
         context: {
-            select: () => data.context.now.length > 0,
-            validFormat: (a) => {
-                const reg = /^[A-z][A-z|0-9]*$/g;
-                return [...a.matchAll(reg)].length > 0
-            }
+            select: () => datas.context.now.length > 0,
+            validFormat: (v) => (/^[A-z][A-z|0-9]*$/g).test(v)
         }
     }
 }
