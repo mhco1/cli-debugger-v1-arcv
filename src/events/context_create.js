@@ -1,6 +1,7 @@
 export default async (name = '', callback) => {
     let res, err;
     const { childProcess, path } = modules.builtin;
+    const { uuid } = modules.tools;
     const { is, has } = modules.test;
     const { context } = datas;
 
@@ -15,15 +16,22 @@ export default async (name = '', callback) => {
             }
         });
 
+        const requests = {};
         const proto = context.c[name] = {
             node,
             history: [],
-            requests: {},
+
+            send: (exe, data) => new Promise((resolve, reject) => {
+                const id = uuid();
+                requests[id] = (err, res) => err ? reject(err) : resolve(res);
+                node.send({ exe, id, data });
+            }),
         };
 
         node.on('message', (data) => {
-            const { id, res } = data;
-            proto.requests[id](undefined, res);
+            const { id, res, err } = data;
+            requests[id](err, res);
+            delete requests[id];
         })
 
         res = `Is create ${name} context`;

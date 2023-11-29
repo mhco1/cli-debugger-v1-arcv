@@ -6,18 +6,21 @@
 
     const session = new Session();
     const url = inspector.url();
-    const exe = {
-        eval: ({ script, id }) => {
-            session.post('Runtime.evaluate', {
+    const _exe = {
+        eval: async ({ script }) =>
+            await session.post('Runtime.evaluate', {
                 expression: script,
-            }).then(res => process.send({
-                id, res: res.result,
-            }))
-        },
+            }),
+        props: async ({ id }) =>
+            await session.post('Runtime.getProperties', {
+                objectId: id, ownProperties: true,
+            }),
     };
 
-    process.on('message', data => {
-        exe[data.exe](data)
+    process.on('message', ({ exe, id, data }) => {
+        (async () => await _exe[exe](data))()
+            .then(res => process.send({ id, res }))
+            .catch(err => process.send({ id, err }))
     });
 
     session.connect();

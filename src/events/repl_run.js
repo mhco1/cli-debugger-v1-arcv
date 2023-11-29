@@ -23,7 +23,7 @@ export default async () => {
 
     const res = await events.emit2('context_run', expression);
 
-    term(util.inspect(res.value, {
+    term(util.inspect(res, {
         colors: true,
         showProxy: true,
     }));
