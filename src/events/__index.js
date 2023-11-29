@@ -1,3 +1,4 @@
+export * as _end from './_end.js';
 export * as _start from './_start.js';
 export * as command_clear from './command_clear.js';
 export * as command_context from './command_context.js';

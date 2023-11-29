@@ -9,12 +9,13 @@ export default (args) => {
 
     term.clear();
     term.on('key', (name, matches, data) => {
-        if (name == 'CTRL_C') events.emit('e_end');
+        if (name == 'CTRL_C') events.emit('_end');
         if (name == 'CTRL_T') debugger;
     })
 
     globalThis.events = new event();
     events.emit2 = toPromise((...args) => events.emit(...args));
+
     fs.exist = async (dir) => { let res; try { fsStat(dir); return true; } catch (err) { return false; } };
 
     for (const name in listeners) {
@@ -24,7 +25,9 @@ export default (args) => {
 
     //---
 
-    events.emit2('context_create', 'context')
+    (async () => { })()
+        .then(res => events.emit2('context_create', 'context'))
         .then(res => events.emit2('context_select', 'context'))
-        .then(res => events.emit('_start'));
+        .then(res => events.emit('_start'))
+        .catch(err => term(err, '\n'));
 }
