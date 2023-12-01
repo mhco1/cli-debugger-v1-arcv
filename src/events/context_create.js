@@ -1,9 +1,9 @@
-export default async (name = '', callback) => {
+export default (main) => async (name = '', callback) => {
     let res, err;
-    const { childProcess, path } = modules.builtin;
-    const { uuid } = modules.tools;
-    const { is, has } = modules.test;
-    const { context } = datas;
+    const { childProcess, path } = main.modules.builtin;
+    const { uuid } = main.modules.tools;
+    const { is, has } = main.modules.test;
+    const { context } = main.datas;
 
     (() => {
         if (!is.context.validFormat(name)) return (err = 'Invalid format to new context')
@@ -17,7 +17,7 @@ export default async (name = '', callback) => {
         });
 
         const requests = {};
-        const proto = context.c[name] = {
+        context.c[name] = {
             node,
             history: [],
 

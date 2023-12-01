@@ -1,7 +1,7 @@
-export default (name = '', callback) => {
-    let res, err
-    const { is, has } = modules.test;
-    const { context } = datas;
+export default (main) => (name = '', callback) => {
+    let res, err;
+    const { has } = main.modules.test;
+    const { context } = main.datas;
 
     (() => {
         if (!has.context(name)) return (err = 'Context not defined');

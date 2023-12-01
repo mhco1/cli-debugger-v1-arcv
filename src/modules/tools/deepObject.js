@@ -1,0 +1,1 @@
+export default (path = [], obj = {}) => [obj, ...path].reduce((a, b) => typeof a[b] == 'undefined' ? (a[b] = {}) : a[b])

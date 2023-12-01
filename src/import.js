@@ -5,7 +5,8 @@ import childProcess from 'node:child_process';
 import util from 'node:util';
 
 import terminal from 'terminal-kit';
-import asciify from 'asciify'
+import asciify from 'asciify';
+import * as acorn from 'acorn';
 
 import datas from '#src/data.js';
 import * as listeners from '#src/events/__index.js';
@@ -13,20 +14,22 @@ import * as listeners from '#src/events/__index.js';
 import test from '#src/modules/test.js';
 import uuid from '#src/modules/tools/uuid.js';
 import toPromise from '#src/modules/tools/toPromise.js';
-import accessRef from '#src/modules/tools/accessRef.js';
+import deepObject from '#src/modules/tools/deepObject.js';
+import extractArguments from '#src/modules/tools/extractArguments.js';
 
 export const term = terminal.terminal;
+export const events = new event();
 export const modules = {
     test,
     tools: {
         uuid,
         toPromise,
-        accessRef,
+        deepObject,
+        extractArguments: extractArguments({ acorn }),
     },
     builtin: {
         fs,
         path,
-        event,
         childProcess,
         asciify,
         util,

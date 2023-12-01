@@ -1,7 +1,7 @@
-export default (script = '', callback) => {
+export default (main) => (script = '', callback) => {
     let res, err;
-    const { is } = modules.test;
-    const { context } = datas;
+    const { is } = main.modules.test;
+    const { context } = main.datas;
 
     if (!is.context.select()) {
         err = Error('No context was selected');
